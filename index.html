@@ -454,11 +454,52 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 900px) {
-            .trust-section, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .trust-section { padding: 3rem 1.5rem; }
-            .nav-left { flex-direction: column; gap: 1rem; align-items: flex-start; }
-            .navbar { flex-direction: column; align-items: flex-start; padding: 1rem; }
-        }
+    /* Reducimos el padding lateral general de las secciones */
+    .section {
+        padding: 3rem 1rem; 
+    }
+    
+    .trust-section, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .trust-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    /* SOLUCIÓN AL DESBORDE: Reducimos el relleno interno del cuadro blanco */
+    .contact-grid {
+        padding: 1.5rem; 
+        overflow: hidden; /* Corta cualquier elemento que intente salir del fondo blanco */
+    }
+    
+    /* Obligamos a los inputs y al botón a no superar nunca el 100% de su caja padre */
+    .form-control, .contact-submit-btn {
+        max-width: 100%;
+        width: 100%;
+        -webkit-appearance: none; /* Fuerza a Safari a obedecer nuestros estilos CSS */
+    }
+    
+    /* Ajustes para la lista de contactos */
+    .contact-info-list li {
+        padding: 0.75rem 0.5rem;
+        word-break: break-word; /* Evita que correos largos rompan el recuadro gris */
+    }
+    
+    /* Ajustes del menú superior */
+    .nav-left {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+}
     </style>
 <base target="_blank">
 </head>
